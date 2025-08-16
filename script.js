@@ -645,3 +645,46 @@ if ("IntersectionObserver" in window) {
       });
   }, 100);
 }
+
+// Modal functionality for app download
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("appModal");
+  const downloadBtn = document.getElementById("downloadAppBtn");
+  const closeModal = document.getElementById("closeModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  // Open modal when download button is clicked
+  downloadBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+
+  // Close modal when X is clicked
+  closeModal?.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  // Close modal when close button is clicked
+  closeModalBtn?.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  // Close modal when clicking outside of it
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+});
