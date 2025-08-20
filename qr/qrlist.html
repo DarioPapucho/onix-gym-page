@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Galería QR</title>
+	<style>
+		:root {
+			--bg: #0b0b0b;
+			--fg: #e8e8e8;
+			--muted: #a0a0a0;
+			--overlay: rgba(0,0,0,0.85);
+		}
+
+		html, body { height: 100%; }
+
+		body {
+			margin: 0;
+			font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+			background: var(--bg);
+			color: var(--fg);
+		}
+
+		h1 {
+			font-size: 20px;
+			font-weight: 600;
+			margin: 16px;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+			gap: 12px;
+			padding: 12px 12px 28px 12px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.card {
+			background: #141414;
+			border: 1px solid #1f1f1f;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+			transition: transform 120ms ease, box-shadow 120ms ease;
+			cursor: zoom-in;
+		}
+		.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
+
+		.thumb {
+			display: block;
+			width: 100%;
+			height: 180px;
+			object-fit: cover;
+			background: #0f0f0f;
+		}
+
+		.caption {
+			padding: 6px 10px 10px 10px;
+			font-size: 12px;
+			color: var(--muted);
+			user-select: none;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.modal {
+			position: fixed;
+			inset: 0;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			background: var(--overlay);
+			z-index: 9999;
+			padding: 24px;
+		}
+		/* Al abrir: fondo completamente negro */
+		.modal.open { display: flex; background: #000; }
+
+		.modal img {
+			max-width: min(92vw, 1600px);
+			max-height: 92vh;
+			width: auto;
+			height: auto;
+			display: block;
+			box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+			border-radius: 10px;
+			background: #111;
+		}
+
+		/* Botón de cerrar más grande y centrado arriba */
+		.modal .close-btn {
+			position: fixed;
+			top: 18px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: rgba(255,255,255,0.12);
+			border: 1px solid rgba(255,255,255,0.28);
+			color: #fff;
+			backdrop-filter: blur(6px);
+			padding: 10px 18px;
+			border-radius: 999px;
+			cursor: pointer;
+			font-size: 18px;
+			z-index: 10000;
+		}
+		.modal .close-btn:hover { background: rgba(255,255,255,0.18); }
+
+		.footer {
+			text-align: center;
+			font-size: 12px;
+			color: var(--muted);
+			padding: 8px 0 16px 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Galería de imágenes</h1>
+	<div id="gallery" class="gallery"></div>
+
+	<div id="modal" class="modal" aria-hidden="true">
+		<button id="closeBtn" class="close-btn" aria-label="Cerrar (Esc)">Cerrar ✕</button>
+		<img id="modalImg" alt="Imagen ampliada" />
+	</div>
+
+	<div class="footer">Haz clic en una imagen para verla en grande. Pulsa Esc o clic fuera para cerrar.</div>
+
+	<script>
+		const imageFiles = [
+			"M001V.png","M002V.png","M003V.png","M004V.png","M005V.png","M006H.png","M007V.png","M008V.png","M009H.png","M010V.png","M011V.png",
+			"M012H.png","M013H.png","M014V.png","M015V.png","M016V.png","M017V.png","M018V.png","M019V.png","M020V.png","M021V.png","M022V.png",
+			"M023H.png","M024H.png","M025H.png","M026H.png","M027H.png","M028H.png","M028V.png","M030H.png","M031H.png","M034V.png","M035V.png",
+			"M036V.png","M037V.png","M038H.png","M039H.png","M040V.png","M041H.png","M042V.png","M043V.png","M044V.png","M045H.png","M046H.png",
+			"M047V.png","M048H.png","M049V.png","M050H.png","M051H.png","M052H.png","M053V.png","M054H.png","M055V.png","M056V.png","M058H.png",
+			"M059V.png","M060V.png","M061V.png","M062V.png","M033H.png"
+		].sort();
+
+		const galleryEl = document.getElementById('gallery');
+		const modalEl = document.getElementById('modal');
+		const modalImg = document.getElementById('modalImg');
+		const closeBtn = document.getElementById('closeBtn');
+
+		function createCard(src) {
+			const card = document.createElement('div');
+			card.className = 'card';
+
+			const img = document.createElement('img');
+			img.className = 'thumb';
+			img.src = src;
+			img.alt = src;
+			img.loading = 'lazy';
+
+			const cap = document.createElement('div');
+			cap.className = 'caption';
+			cap.textContent = src;
+
+			card.appendChild(img);
+			card.appendChild(cap);
+
+			card.addEventListener('click', () => openModal(src));
+			return card;
+		}
+
+		function renderGallery() {
+			const frag = document.createDocumentFragment();
+			for (const file of imageFiles) {
+				frag.appendChild(createCard(file));
+			}
+			galleryEl.appendChild(frag);
+		}
+
+		function openModal(src) {
+			modalImg.src = src;
+			modalEl.classList.add('open');
+			modalEl.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeModal() {
+			modalEl.classList.remove('open');
+			modalEl.setAttribute('aria-hidden', 'true');
+			modalImg.removeAttribute('src');
+			document.body.style.overflow = '';
+		}
+
+		modalEl.addEventListener('click', (e) => {
+			if (e.target === modalEl) closeModal();
+		});
+		closeBtn.addEventListener('click', closeModal);
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') closeModal();
+		});
+
+		renderGallery();
+	</script>
+</body>
+</html> 
