@@ -162,7 +162,7 @@ class ScheduleManager {
   async loadScheduleData() {
     try {
       const response = await fetch(
-        "https://dariopapucho.github.io/assets.github.io/jsons/group_schedules.json"
+        "https://onixgym.online/jsons/group_schedules.json"
       );
       const data = await response.json();
       this.scheduleData = data.group_schedules;
