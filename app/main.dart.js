@@ -23419,7 +23419,7 @@ m.NG$=new A.UB(A.aK(t.m))
 q=t.kE
 n.lP(m,q)
 m=new A.Ls(n.$1$0(q))
-m.b="https://dariopapucho.github.io/assets.github.io"
+m.b="https://onixgym.online"
 p=t.q3
 n.lP(m,p)
 m=t.ar
@@ -70935,7 +70935,7 @@ break}if(o instanceof A.ha&&o.a!=null)p.ak(new A.aeE(p,a,o))
 else p.ak(new A.aeF(p,a))
 case 1:return A.H(q,r)}})
 return A.I($async$tt,r)},
-O(a){var s,r=this,q=null,p=A.DL(!0,B.z,0,B.lP,q,A.a6Y(A.c([new A.wp(A.aC1(q,q,new A.lw("https://dariopapucho.github.io/assets.github.io/images/onixlogo.png",1,q,B.jK)),75,75,q),B.KK,B.PS],t.E),B.ap,B.aj,B.an))
+O(a){var s,r=this,q=null,p=A.DL(!0,B.z,0,B.lP,q,A.a6Y(A.c([new A.wp(A.aC1(q,q,new A.lw("https://onixgym.online/images/onixlogo.png",1,q,B.jK)),75,75,q),B.KK,B.PS],t.E),B.ap,B.aj,B.an))
 if(r.r)s=B.zN
 else s=J.fC(r.f)?A.jx(A.dg("No hay planes disponibles.",q,q,q,A.ja(q,q,B.i,q,q,q,q,q,q,q,q,18,q,q,q,q,q,!0,q,q,q,q,q,q,q,q),q),q,q):A.aq6(new A.aeM(r),J.co(r.f),q)
 return A.Ja(p,B.z,s,q)}}
@@ -71073,7 +71073,7 @@ h=t.z
 g=A.alJ(null,null,null)
 g.a="GET"
 s=7
-return A.M(n.b.DJ(0,"https://dariopapucho.github.io/assets.github.io/jsons/"+a,null,null,null,g,null,h),$async$m1)
+return A.M(n.b.DJ(0,"https://onixgym.online/jsons/"+a,null,null,null,g,null,h),$async$m1)
 case 7:m=a1
 if(m.c===200){l=m.a
 k=null
@@ -76541,7 +76541,7 @@ B.z=new A.B(1,0.07058823529411765,0.07058823529411765,0.07058823529411765,B.f)
 B.a1=new A.Ea(0,"rectangle")
 B.kk=new A.cp(B.z,null,null,null,null,null,B.a1)
 B.jK=new A.abi(0,"never")
-B.Hi=new A.lw("https://dariopapucho.github.io/assets.github.io/images/onixlogo.png?height=200&width=300",1,null,B.jK)
+B.Hi=new A.lw("https://onixgym.online/images/onixlogo.png?height=200&width=300",1,null,B.jK)
 B.h7=new A.E7(2,"cover")
 B.ba=new A.qp(3,"noRepeat")
 B.aX=new A.ni(2,"medium")
