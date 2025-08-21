@@ -1,18 +1,5 @@
 [
     {
-        "id": "0201",
-        "machineId": "M043",
-        "name": "Smith enfocado en cuádriceps",
-        "level": "principiante",
-        "description": "Ejercicio de sentadilla en máquina Smith que permite un movimiento controlado y seguro. Mantener los pies a la altura de los hombros para maximizar la activación del cuádriceps.",
-        "urlVideo": "57",
-        "focusRoutine": "Cuádriceps",
-        "sets": 3,
-        "reps": "12 - 15",
-        "restTime": "1 - 1.5 minutos",
-        "machineName": "Máquina Smith"
-    },
-    {
         "id": "0202",
         "machineId": "M003",
         "name": "Prensa enfocada en cuádriceps",
@@ -115,44 +102,5 @@
         "reps": "12 - 15",
         "restTime": "1 - 1.5 minutos",
         "machineName": "Máquina para extensión de cuádriceps"
-    },
-    {
-        "id": "0211",
-        "machineId": "M034",
-        "name": "Sentadilla de sumo",
-        "level": "principiante",
-        "description": "Variación de sentadilla con posición amplia de los pies que enfatiza el trabajo de glúteos y aductores. Mantener la curvatura natural de la espalda durante todo el movimiento.",
-        "urlVideo": "51",
-        "focusRoutine": "Cuádriceps y glúteos",
-        "sets": 4,
-        "reps": "12 - 15",
-        "restTime": "1 - 1.5 minutos",
-        "machineName": "Sentadilla de sumo"
-    },
-    {
-        "id": "0212",
-        "machineId": "M038",
-        "name": "Ejercicio en máquina Sissy",
-        "level": "principiante",
-        "description": "Ejercicio específico en máquina Sissy que trabaja intensamente el cuádriceps mediante un movimiento de extensión completa, ideal para desarrollo y definición muscular.",
-        "urlVideo": "55",
-        "focusRoutine": "Cuádriceps",
-        "sets": 4,
-        "reps": "12 - 15",
-        "restTime": "1 - 1.5 minutos",
-        "machineName": "Máquina Sissy"
-    },
-    {
-        "id": "0214",
-        "machineId": "M044",
-        "name": "Sentadilla libre",
-        "level": "principiante",
-        "description": "Ejercicio de sentadilla con peso libre que desarrolla fuerza funcional y trabaja cuádriceps, femorales y glúteos, mejorando también el equilibrio y la coordinación.",
-        "urlVideo": "58",
-        "focusRoutine": "Cuádriceps, femorales y glúteos",
-        "sets": 4,
-        "reps": "12 - 15",
-        "restTime": "1 - 1.5 minutos",
-        "machineName": "Rack para sentadilla libre"
     }
 ]
