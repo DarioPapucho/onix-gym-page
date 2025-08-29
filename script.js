@@ -104,7 +104,7 @@ class GalleryCarousel {
     this.stopAutoPlay();
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 10000);
   }
 
   stopAutoPlay() {
@@ -429,7 +429,7 @@ class TeamCarousel {
     this.stopAutoPlay();
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 10000);
   }
 
   stopAutoPlay() {
@@ -538,7 +538,7 @@ class TestimonialsCarousel {
     this.stopAutoPlay();
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, 6000); // Slightly different timing than team carousel
+    }, 12000); // Slightly different timing than team carousel
   }
 
   stopAutoPlay() {
