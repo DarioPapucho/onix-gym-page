@@ -52,6 +52,19 @@
         "machineName": "Máquina de abducción y aducción"
     },
     {
+        "id": "0306",
+        "machineId": "M035",
+        "name": "Ejercicio para pantorrillas sentado",
+        "level": "principiante",
+        "description": "Ejercicio específico para el desarrollo de pantorrillas en posición sentada. Realizar la elevación con explosividad y descender lentamente para maximizar la tensión muscular.",
+        "urlVideo": "https://www.youtube.com/embed/AvOuQuGGLc0",
+        "focusRoutine": "Pantorrillas",
+        "sets": 4,
+        "reps": "20 - 25",
+        "restTime": "1 minuto",
+        "machineName": "Máquina de pantorrilla sentado"
+    },
+    {
         "id": "0307",
         "machineId": "M027",
         "name": "Hip thrust",
@@ -104,6 +117,19 @@
         "machineName": "Máquina para patada de glúteo lateral"
     },
     {
+        "id": "0313",
+        "machineId": "M031",
+        "name": "Patada de glúteo parada",
+        "level": "principiante",
+        "description": "Ejercicio de patada de glúteo en posición de pie que permite trabajar la estabilidad y coordinación mientras se fortalece el glúteo mayor de forma efectiva.",
+        "urlVideo": "https://www.youtube.com/embed/WEFp7LMxEHo",
+        "focusRoutine": "Glúteos",
+        "sets": 4,
+        "reps": "12 - 15",
+        "restTime": "1 - 1.5 minutos",
+        "machineName": "Máquina para patada de glúteo parado"
+    },
+    {
         "id": "0314",
         "machineId": "M045",
         "name": "Patada de glúteo acostado",
@@ -128,6 +154,58 @@
         "reps": "12 - 15",
         "restTime": "1 - 1.5 minutos",
         "machineName": "Máquina para patada de glúteo semi-inclinado"
+    },
+    {
+        "id": "0316",
+        "machineId": "M036",
+        "name": "Femoral unilateral",
+        "level": "principiante",
+        "description": "Ejercicio de femoral trabajando una pierna a la vez, ideal para corregir desequilibrios musculares y mejorar la fuerza individual de cada pierna.",
+        "urlVideo": "https://www.youtube.com/embed/uDoV3rOW218",
+        "focusRoutine": "Femorales",
+        "sets": 4,
+        "reps": "12 - 15",
+        "restTime": "1 - 1.5 minutos",
+        "machineName": "Máquina para femoral unilateral"
+    },
+    {
+        "id": "0317",
+        "machineId": "M037",
+        "name": "Femoral semi-inclinado",
+        "level": "principiante",
+        "description": "Ejercicio de femoral en ángulo semi-inclinado que proporciona una posición cómoda mientras mantiene la efectividad en el trabajo de los músculos posteriores del muslo.",
+        "urlVideo": "https://www.youtube.com/embed/LISdEnwB3HI",
+        "focusRoutine": "Femorales",
+        "sets": 4,
+        "reps": "12 - 15",
+        "restTime": "1 - 1.5 minutos",
+        "machineName": "Máquina de femorales semi-inclinado"
+    },
+    {
+        "id": "0318",
+        "machineId": "M039",
+        "name": "Peso muerto y búlgaras",
+        "level": "principiante",
+        "description": "Ejercicio compuesto que combina peso muerto y sentadillas búlgaras en una sola máquina, trabajando intensamente femorales y glúteos de forma integral.",
+        "urlVideo": "https://www.youtube.com/embed/gphk_QH1iKA",
+        "focusRoutine": "Femorales y glúteos",
+        "sets": 4,
+        "reps": "12 - 15",
+        "restTime": "1 - 1.5 minutos",
+        "machineName": "Máquina para peso muerto y búlgaras"
+    },
+    {
+        "id": "0319",
+        "machineId": "M033",
+        "name": "Búlgaras",
+        "level": "principiante",
+        "description": "Ejercicio unilateral tipo sentadilla búlgara que desarrolla fuerza, equilibrio y coordinación mientras trabaja intensamente femorales y glúteos de cada pierna por separado.",
+        "urlVideo": "https://www.youtube.com/embed/PM_8qTqKvhY",
+        "focusRoutine": "Femorales y glúteos",
+        "sets": 4,
+        "reps": "12 - 15",
+        "restTime": "1 - 1.5 minutos",
+        "machineName": "Máquina de búlgaras"
     },
     {
         "id": "0320",
